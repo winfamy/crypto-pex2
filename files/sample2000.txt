@@ -1,0 +1,54 @@
+Skip to content
+Home
+Your O'Reilly
+Profile
+History
+Playlists
+Assignments
+Highlights
+Answers
+Featured
+Navigating Change
+Recommended
+Explore
+All Topics
+Early Releases
+Shared Playlists
+Most Popular Titles
+Resource Centers
+Live Events
+All Events
+Architectural Katas
+AI & ML
+Data Sci & Eng
+Programming
+Infra & Ops
+Software Arch
+Interact
+Scenarios
+Sandboxes
+Jupyter Notebooks
+Certifications
+Settings
+Support
+Newsletters
+Sign Out
+Table of Contents for Introduction to Cryptography with Coding Theory, 3rd Edition
+Search in book...
+
+Toggle Font Controls
+PREVPrevious Chapter
+11.6 Exercises
+NEXTNext Chapter
+12.2 Multicollisions
+Chapter 12 Hash Functions: Attacks and Applications
+12.1 Birthday Attacks
+If there are 23 people in a room, the probability is slightly more than 50% that two of them have the same birthday. If there are 30, the probability is around 70%. This might seem surprising; it is called the birthday paradox. Let’s see why it’s true. We’ll ignore leap years (which would slightly lower the probability of a match) and we assume that all birthdays are equally likely (if not, the probability of a match would be slightly higher).
+
+Consider the case of 23 people. We’ll compute the probability that they all have different birthdays. Line them up in a row. The first person uses up one day, so the second person has probability (1−1/365) of having a different birthday. There are two days removed for the third person, so the probability is (1−2/365) that the third birthday differs from the first two. Therefore, the probability of all three people having different birthdays is (1−1/365)(1−2/365). Continuing in this way, we see that the probability that all 23 people have different birthdays is
+
+(1−1365)(1−2365)⋯(1−22365)=.493.
+Therefore, the probability of at least two having the same birthday is
+
+1−.493=.507.
+One way to understand the preceding calculation intuitively is to consider the case of 40 pe

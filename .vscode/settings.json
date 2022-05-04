@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "stdint.h": "c",
+        "sstream": "cpp",
+        "functional": "cpp",
+        "md5_kernel.h": "c",
+        "hash_utils.h": "c",
+        "cuda_utils.cu": "c"
+    }
+}
