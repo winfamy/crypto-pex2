@@ -7,40 +7,29 @@
 #include <math.h>
 #include <cuda_runtime.h>
 
-__device__ __host__ unsigned char * aToTinyHash(uint32_t a) {
-    unsigned char * str = (unsigned char *)malloc(sizeof(unsigned char) * 6);
-    memset(str, 0, 6);
-
-    int decnum, rem, j = 0;
-    for (int i = 0; i < 3; i++) {
-        decnum = (a >> (8 * i)) & 0xFF;
-        while (decnum != 0)
-        {
-            rem = decnum % 16;
-            if(rem < 10)
-                rem = rem + 48;
-            else
-                rem = rem + 55;
-            
-            if (j % 2 == 0) {
-                str[j+1] = rem;
-            } else {
-                str[j-1] = rem;
-            }
-
-            j++;
-            decnum = decnum / 16;
-        }
-    }
-
-    str[5] = '\0';
-    return str;
+__device__ __host__ bool tinyHashCompare(unsigned char * a, unsigned char * b) {
+    return (a[0] == b[0] && a[1] == b[1] && (a[2] & 0xF0) == (b[2] & 0xF0));
 }
 
-__device__ __host__ bool tinyHashCompare(unsigned char * a, unsigned char * b) {
-    return (a[0] == b[0]) &&
-        (a[1] == b[1]) && 
-        (a[2] == b[2]) && 
-        (a[3] == b[3]) && 
-        (a[4] == b[4]);
+__device__ __host__ void hexify(const unsigned char* input, char* output) {
+    const char* map = "0123456789abcdef";
+
+    for(int i = 0; i < 16; i++) {
+        output[i*2] = map[(input[i] & 0xF0) >> 4];
+        output[i*2+1] = map[(input[i] & 0x0F)];
+    }
+    output[32] = '\0';
+}
+
+void print_hash(unsigned char * result) {
+    char output[32];
+    hexify(result, output);
+    printf("%s", output);
+}
+
+void print_tinyhash(unsigned char * result) {
+    char output[32];
+    hexify(result, output);
+    output[5] = '\0';
+    printf("%s", output);
 }

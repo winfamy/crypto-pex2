@@ -5,6 +5,7 @@
         "functional": "cpp",
         "md5_kernel.h": "c",
         "hash_utils.h": "c",
-        "cuda_utils.cu": "c"
+        "cuda_utils.cu": "c",
+        "random": "c"
     }
 }
