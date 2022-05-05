@@ -36,6 +36,7 @@ __global__ void run_task1_crack() {
     memcpy(sharedCharset, g_deviceCharset, sizeof(char) * (CHARSET_LEN));
 
     for (uint32_t i = 0; i < HASHES_PER_KERNEL; i++) {
+        __syncthreads();
         if (found) return;
 
         idxToString(idx, threadStr);
