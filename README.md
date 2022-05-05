@@ -13,6 +13,10 @@ A GTX 3070Ti was used for testing.
 5. (Optional) Run `test_hashes.sh` to confirm results.
     1. `source test_hashes.sh`
 
+### Code
+Must of the interesting stuff is in [main.cu](main.cu), [task1_kernel.h](task1_kernel.h), and [task2_kernel.h](task2_kernel.h).
+For reading on how CUDA works, read https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html.
+
 ### Screenshots
 ![A test run](/screenshots/run.png "Project sample run")
 ![File hash confirmations](/screenshots/file_hashes.png "Output file hashes")
