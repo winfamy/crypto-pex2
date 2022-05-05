@@ -17,3 +17,8 @@ A GTX 3070Ti was used for testing.
 ![A test run](/screenshots/run.png "Project sample run")
 ![File hash confirmations](/screenshots/file_hashes.png "Output file hashes")
 
+### Documentation
+This is also contained within [main.cu](main.cu)
+* Used https://github.com/iryont/md5-cracker for a basis on how to approach the problem and how to work with a CUDA device.
+* Used https://opensource.apple.com/source/cvs/cvs-19/cvs/lib/md5.c for their implementation of MD5. Minor edits were made to how buffers were handled.
+

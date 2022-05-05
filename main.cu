@@ -1,3 +1,7 @@
+// Documentation:
+// Used https://github.com/iryont/md5-cracker for a basis on how to approach the problem and how to work with a CUDA device.
+// Used https://opensource.apple.com/source/cvs/cvs-19/cvs/lib/md5.c for their implementation of MD5. Minor edits were made to how buffers were handled.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
